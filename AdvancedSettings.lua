@@ -18,9 +18,12 @@ end
 ---------- Tabs
 local AdvancedSettings_TAB = gui.Tab(gui.Reference("Misc"), "advanced.settings", "Advanced Settings")
 
+local AdvancedUpdate_TAB = gui.Tab(gui.Reference("Misc"), "advanced.update", "Advanced Update")
+
+
 ---------- Checkboxes etc
-local Advanced_Settings_UPDATER_GBOX = gui.Groupbox(AdvancedSettings_TAB, "Updater", 10, 10, 160, 0)
+local Advanced_Update_UPDATER_GBOX = gui.Groupbox(AdvancedUpdate_TAB, "Updater", 10, 10, 160, 0)
 
 
 -- Update su changelog
-local AdvancedSettings_CURRENTVERSION = gui.Text(Advanced_Settings_UPDATER_GBOX, "Current version: v" .. CURRENTVERSION)
+local AdvancedUpdate_CURRENTVERSION = gui.Text(Advanced_Update_UPDATER_GBOX, "Current version: v" .. CURRENTVERSION)
