@@ -9,7 +9,7 @@ local LATESTVERSION = http.Get("https://raw.githubusercontent.com/ztxs/updater/m
 local function Update() 
     if CURRENTVERSION ~= LATESTVERSION then
         currentScript = file.Open(GetScriptName(), "w")
-        currentScript:Write(http.Get("https://raw.githubusercontent.com/LunarLuzogSM/OriLua/master/OriLua.lua"))
+        currentScript:Write(http.Get("https://raw.githubusercontent.com/ztxs/updater/master/AdvancedSettings.lua"))
         currentScript:Close()
         LoadScript(GetScriptName())
     end
