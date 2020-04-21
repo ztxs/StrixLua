@@ -1,6 +1,6 @@
 ---------- Print
 
-print ("AdvancedSettings has been loaded")
+print("AdvancedSettings has been loaded")
 
 ---------- Update
 
@@ -14,3 +14,13 @@ local function Update()
         LoadScript(GetScriptName())
     end
 end
+
+---------- Tabs
+local AdvancedSettings_TAB = gui.Tab(gui.Reference("Misc"), "advanced.settings", "Advanced Settings")
+
+---------- Checkboxes etc
+local Advanced_Settings_UPDATER_GBOX = gui.Groupbox(AdvancedSettings_TAB, "Updater", 10, 10, 160, 0)
+
+
+-- Update su changelog
+local AdvancedSettings_CURRENTVERSION = gui.Text(Advanced_Settings_UPDATER_GBOX, "Current version: v" .. CURRENTVERSION)
