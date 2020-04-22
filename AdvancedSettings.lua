@@ -44,6 +44,8 @@ local Advanced_Settings_GBOX = gui.Groupbox(AdvancedSettings_TAB, "Features", 10
 
 local Advanced_Settings_GBOX = gui.Groupbox(AdvancedSettings_TAB, "Skybox Changer", 210, 10, 180, 0)
 
+local Advanced_Settings_GBOX = gui.Groupbox(AdvancedSettings_TAB, "Anti Aim Indicator", 10, 140, 180, 0)
+
 -- Headwalk
 local movement_ref = gui.Reference("MISC", "Advanced Settings", "Features")
 
@@ -265,7 +267,7 @@ local f12killsound = gui.Checkbox(menu, "killsound", "F12 Kill Sound", 0)
 local currentTime = 0
 local timer = 0
 local enabled = true
-local snd_time = 1.100 -- set sound file length default f12 sound = 1.100 .
+local snd_time = 0.6 -- set sound file length default f12 sound = 0.6 .
 local fl_val, flp_val = nil, nil
 
 local function handler()
@@ -296,7 +298,9 @@ if local_ent == nil or attacker_ent == nil then
 return
 end
 if (attacker_ent:GetIndex() == local_ent) then
+if not enabled then
 fl_val, flp_val = gui.GetValue("misc.fakelag.enable"), gui.GetValue("misc.fakelag.peek")
+end
 gui.SetValue("misc.fakelag.enable", 0)
 gui.SetValue("misc.fakelag.peek", 0)
 client.SetConVar("voice_loopback", 1, true)
