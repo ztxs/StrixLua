@@ -24,7 +24,9 @@ local AdvancedUpdate_TAB = gui.Tab(gui.Reference("Misc"), "advanced.update", "Ad
 ---------- Checkboxes etc
 local Advanced_Update_UPDATER_GBOX = gui.Groupbox(AdvancedUpdate_TAB, "Updater", 10, 10, 160, 0)
 
-local Advanced_Update_CHANGELOG_GBOX = gui.Groupbox(AdvancedUpdate_TAB, "Changelog", 300, 10, 290, 0)
+local Advanced_Update_CHANGELOG_GBOX = gui.Groupbox(AdvancedUpdate_TAB, "Changelog", 200, 10, 290, 0)
+
+local Advanced_Update_COMINGSOON_GBOX = gui.Groupbox(AdvancedUpdate_TAB, "Coming Soon:", 200, 160, 290, 0)
 
 -- Update su changelog
 local AdvancedUpdate_CURRENTVERSION = gui.Text(Advanced_Update_UPDATER_GBOX, "Current version: v" .. CURRENTVERSION)
@@ -34,6 +36,8 @@ local Advanced_Update_LATESTVERSION = gui.Text(Advanced_Update_UPDATER_GBOX, "La
 local AdvancedUpdate_UPDATE = gui.Button(Advanced_Update_UPDATER_GBOX, "Update", Update)
 
 local Advanced_Update_CHANGELOG_TEXT = gui.Text(Advanced_Update_CHANGELOG_GBOX, http.Get("https://raw.githubusercontent.com/ztxs/updater/master/changelog.txt"))
+
+local Advanced_Update_COMINGSOON_TEXT = gui.Text(Advanced_Update_COMINGSOON_GBOX, http.Get("https://raw.githubusercontent.com/ztxs/updater/master/comingsoon.txt"))
 
 -- Advanced settings juodas langelis
 local Advanced_Settings_GBOX = gui.Groupbox(AdvancedSettings_TAB, "Features", 10, 10, 180, 0)
