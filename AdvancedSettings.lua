@@ -42,10 +42,6 @@ local Advanced_Update_COMINGSOON_TEXT = gui.Text(Advanced_Update_COMINGSOON_GBOX
 -- Advanced settings juodas langelis
 local Advanced_Settings_GBOX = gui.Groupbox(AdvancedSettings_TAB, "Features", 10, 10, 180, 0)
 
-local Advanced_Settings_GBOX = gui.Groupbox(AdvancedSettings_TAB, "Skybox Changer", 210, 10, 180, 0)
-
-local Advanced_Settings_GBOX = gui.Groupbox(AdvancedSettings_TAB, "Anti Aim Indicator", 10, 140, 180, 0)
-
 -- Headwalk
 local movement_ref = gui.Reference("MISC", "Advanced Settings", "Features")
 
@@ -102,165 +98,6 @@ callbacks.Register("CreateMove", function(cmd)
     end        
 end)
 
-
--- Skybox changer
-local msc_ref = gui.Reference( "Misc", "Advanced Settings", "Skybox Changer" );
-local lua_combobox = gui.Combobox( msc_ref, "lua_skyboxppicker", "Skybox picker",
-                        "Default", "Bartuc Canyon", "Bartuc Grey",
-                        "Galaxy", "Blue Two", "Blue Three", "Blue Four", "Blue Five", "Blue Six",
-                        "Css Default",
-                        "Dark One", "Dark Two", "Dark Three", "Dark Four", "Dark Five",
-                        "Extreme Glaciation",
-                        "Green One", "Green Two", "Green Three", "Green Four", "Green Five", "Green Screen",
-                        "Grey Sky",
-                        "Night One", "Night Two", "Night Three", "Night Four", "Night Five",
-                        "Orange One", "Orange Two", "Orange Three", "Orange Four", "Orange Five", "Orange Six",
-                        "Persistent Fog",
-                        "Pink One", "Pink Two", "Pink Three", "Pink Four", "Pink Five",
-                        "Polluted", "Toxic", "Water Sunset" );
-
-
-
-function SkyBox()
-    local skybox_old = client.GetConVar("sv_skyname");  
-    local skybox_new = (lua_combobox:GetValue());
-  
-        if ( skybox_new == 0 ) then
-            client.SetConVar("sv_skyname" , "sky_descent") --aimware.net censorship, check lua on pastebin
-          
-        elseif (skybox_new == 1 ) then
-            client.SetConVar("sv_skyname" , "bartuc_canyon_")
-          
-        elseif (skybox_new == 2 ) then
-            client.SetConVar("sv_skyname" , "bartuc_grey_sky_")      
-          
-        elseif (skybox_new == 3 ) then
-            client.SetConVar("sv_skyname" , "amethystbk")
-                              
-        elseif (skybox_new == 4 ) then
-            client.SetConVar("sv_skyname" , "blue2")
-                                  
-        elseif (skybox_new == 5 ) then
-            client.SetConVar("sv_skyname" , "blue3")
-                          
-        elseif (skybox_new == 6 ) then
-            client.SetConVar("sv_skyname" , "blue4")
-                              
-        elseif (skybox_new == 7 ) then
-            client.SetConVar("sv_skyname" , "blue5")
-                              
-        elseif (skybox_new == 8 ) then
-            client.SetConVar("sv_skyname" , "blue6")
-                              
-        elseif (skybox_new == 9 ) then
-            client.SetConVar("sv_skyname" , "cssdefault")
-                              
-        elseif (skybox_new == 10 ) then
-            client.SetConVar("sv_skyname" , "dark1")
-                              
-        elseif (skybox_new == 11 ) then
-            client.SetConVar("sv_skyname" , "dark2")
-                              
-        elseif (skybox_new == 12 ) then
-            client.SetConVar("sv_skyname" , "dark3")
-                              
-        elseif (skybox_new == 13 ) then
-            client.SetConVar("sv_skyname" , "dark4")
-                              
-        elseif (skybox_new == 14 ) then
-            client.SetConVar("sv_skyname" , "dark5")
-                              
-        elseif (skybox_new == 15 ) then
-            client.SetConVar("sv_skyname" , "extreme_glaciation_")
-                              
-        elseif (skybox_new == 16 ) then
-            client.SetConVar("sv_skyname" , "green1")
-                              
-        elseif (skybox_new == 17 ) then
-            client.SetConVar("sv_skyname" , "green2")
-                              
-        elseif (skybox_new == 18 ) then
-            client.SetConVar("sv_skyname" , "green3")
-                              
-        elseif (skybox_new == 19 ) then
-            client.SetConVar("sv_skyname" , "green4")
-                              
-        elseif (skybox_new == 20 ) then
-            client.SetConVar("sv_skyname" , "green5")
-                              
-        elseif (skybox_new == 21 ) then
-            client.SetConVar("sv_skyname" , "greenscreen")
-                              
-        elseif (skybox_new == 22 ) then
-            client.SetConVar("sv_skyname" , "greysky")
-                              
-        elseif (skybox_new == 23 ) then
-            client.SetConVar("sv_skyname" , "night1")
-                              
-        elseif (skybox_new == 24 ) then
-            client.SetConVar("sv_skyname" , "night2")
-                              
-        elseif (skybox_new == 25 ) then
-            client.SetConVar("sv_skyname" , "night3")
-                              
-        elseif (skybox_new == 26 ) then
-            client.SetConVar("sv_skyname" , "night4")
-                              
-        elseif (skybox_new == 27 ) then
-            client.SetConVar("sv_skyname" , "night5")
-                              
-        elseif (skybox_new == 28 ) then
-            client.SetConVar("sv_skyname" , "orange1")
-                              
-        elseif (skybox_new == 29 ) then
-            client.SetConVar("sv_skyname" , "orange2")
-                              
-        elseif (skybox_new == 30 ) then
-            client.SetConVar("sv_skyname" , "orange3")
-                              
-        elseif (skybox_new == 31 ) then
-            client.SetConVar("sv_skyname" , "orange4")
-                              
-        elseif (skybox_new == 32 ) then
-            client.SetConVar("sv_skyname" , "orange5")
-                                  
-        elseif (skybox_new == 33 ) then
-            client.SetConVar("sv_skyname" , "orange6")
-                              
-        elseif (skybox_new == 34 ) then
-            client.SetConVar("sv_skyname" , "persistent_fog_")
-                              
-        elseif (skybox_new == 35 ) then
-            client.SetConVar("sv_skyname" , "pink1")
-                              
-        elseif (skybox_new == 36 ) then
-            client.SetConVar("sv_skyname" , "pink2")
-                              
-        elseif (skybox_new == 37 ) then
-            client.SetConVar("sv_skyname" , "pink3")
-                              
-        elseif (skybox_new == 38 ) then
-            client.SetConVar("sv_skyname" , "pink4")
-                              
-        elseif (skybox_new == 39 ) then
-            client.SetConVar("sv_skyname" , "pink5")
-          
-        elseif (skybox_new == 40 ) then
-            client.SetConVar("sv_skyname" , "polluted_atm_")  
-                              
-        elseif (skybox_new == 41 ) then
-            client.SetConVar("sv_skyname" , "toxic_atm_")
-                              
-        elseif (skybox_new == 42 ) then
-            client.SetConVar("sv_skyname" , "water_sunset_")
-              
-                  
-        end
-
-end
-
-callbacks.Register("Draw", "SkyBox", SkyBox)
-
 -- Killsound
 local menu = gui.Reference("Misc", "Advanced Settings", "Features")
 local f12killsound = gui.Checkbox(menu, "killsound", "F12 Kill Sound", 0)
@@ -312,3 +149,45 @@ end
 client.AllowListener("player_death")
 callbacks.Register("FireGameEvent", on_player_death)
 callbacks.Register("Draw", handler)
+
+-- Autobuy
+local ref = gui.Reference("Misc", "Advanced Settings")
+local Group = gui.Groupbox(ref, "Autobuy", 220, 10, 230)
+local checkbox_buybot = gui.Checkbox( Group, "Checkbox", "BuyBot Active",  false)
+local primary_guns = gui.Combobox( Group, "primary", "Primary", "Off", "Scar-20 | G3SG1","AK47 | M4A1", "SSG-08", "AWP", "SG553 | AUG")
+local secondary_guns = gui.Combobox( Group, "Secondary", "Secondary",  "Off", "Dual Berettas", "Deagle | Revolver", "P250","TEC-9 | CZ75-Auto" )
+local k_armor = gui.Checkbox( Group, "k_armor", "Buy Kevlar + Armor", false)
+local armor = gui.Checkbox( Group, "armor", "Buy Armor", false)
+local nades = gui.Checkbox( Group, "nades", "Buy Nades", false)
+local buybot_zeus = gui.Checkbox( Group, "zeus", "Buy Zeus",  false)
+local defuser = gui.Checkbox( Group, "defuser", "Buy Defuser",  false)
+local weapons_ = {"pistol", "revolver", "smg", "rifle", "shotgun", "scout", "autosniper", "sniper", "lmg"}
+local hitboxes_ = {"head", "neck", "chest", "stomach", "pelvis", "arms", "legs"}
+local primary_w = {"buy scar20", "buy m4a1", "buy ssg08", "buy awp", "buy aug"}
+local secondary_w = {"buy elite", "buy deagle", "buy p250", "buy tec9"}
+local function Events( event )
+    if event:GetName() == "round_start" and checkbox_buybot:GetValue() then
+        local needtobuy = ""
+        local primary = primary_guns:GetValue()
+        local secondary = secondary_guns:GetValue()
+
+        if k_armor:GetValue() then needtobuy = "buy vesthelm;"  
+        end
+        if armor:GetValue() then needtobuy = "buy vest;"  
+        end
+        if nades:GetValue() then needtobuy = needtobuy.."buy hegrenade;buy molotov;buy smokegrenade;buy flashbang;buy flashbang;"
+        end
+        if buybot_zeus:GetValue() then needtobuy = needtobuy.."buy taser;"
+        end       
+        if defuser:GetValue() then needtobuy = needtobuy.."buy defuser;"
+        end
+        if primary > 0 then needtobuy = needtobuy..primary_w[primary]..";"  
+        end       
+        if secondary > 0 then needtobuy = needtobuy..secondary_w[secondary]..";"
+        end
+
+
+        client.Command(needtobuy, false)
+  end
+          end
+callbacks.Register( "FireGameEvent", Events)
