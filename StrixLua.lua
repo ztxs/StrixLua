@@ -20,3 +20,4 @@ end
 
 --------------------------------------------- Gui buttons etc
 
+local StrixLua_TAB = gui.Tab(gui.Reference("Misc"), "strix.ll", "StrixLua")
