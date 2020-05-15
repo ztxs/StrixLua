@@ -44,9 +44,9 @@ local StrixLua_CHANGELOG_TEXT = gui.Text(StrixLua_CHANGELOG_GBOX, http.Get("http
 
 -- black windows
 
-local StrixLua_FUNCTIONS_GBOX = gui.Groupbox(StrixLua_TAB, "Features", 10, 10, 230, 0)
+local StrixLua_FUNCTIONS_GBOX = gui.Groupbox(StrixLua_TAB, "Features", 10, 10, 220, 0)
 
-local StrixLua_MOVEMENT_GBOX = gui.Groupbox(StrixLua_TAB, "Movement", 250, 10, 215, 0)
+local StrixLua_MOVEMENT_GBOX = gui.Groupbox(StrixLua_TAB, "Movement", 250, 10, 190, 0)
 -- features/functions
 
 
@@ -369,3 +369,18 @@ callbacks.Register("Draw", function(cmd)
     end
     
 end) 
+
+-- BHop Hitchance by stacky
+
+local SLIDER = gui.Slider( gui.Reference( "Misc", "StrixLua", "Movement" ), "hitchance", "Bhop Hit Chance", 100, 0, 100 )
+callbacks.Register( "CreateMove", function(cmd)
+    if (gui.GetValue( "misc.autojump" ) ~= '"Off"' or bit.band(cmd.buttons, 2) == 0 or
+        bit.band(entities.GetLocalPlayer():GetPropInt("m_fFlags"), 1) == 0 or math.random(1, 100) >= SLIDER:GetValue()) then return end
+    cmd.buttons = cmd.buttons - 2
+end )
+
+-- vanilla knife
+
+local list_knife = {"bayonet", "css", "flip", "gut", "karambit", "m9_bayonet", "tactical", "falchion", "survival_bowie", "butterfly", "push", "cord", "canis", "ursus", "gypsy_jackknife", "outdoor", "stiletto", "widowmaker", "skeleton"};
+local ui_gb = gui.Groupbox(gui.Reference("Misc", "StrixLua"), "Vanilla Knife", 250, 240, 190); local ui_knife = gui.Combobox(ui_gb, "vanilla", "Knife Model", unpack(list_knife));
+local ui_add = gui.Button(ui_gb, "Add", function() gui.Command(ui_knife:GetValue() == 0 and "skin.add weapon_bayonet" or "skin.add weapon_knife_" .. list_knife[(ui_knife:GetValue() + 1)]); end);
