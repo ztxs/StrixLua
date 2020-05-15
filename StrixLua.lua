@@ -7,7 +7,7 @@ print("StrixLua has been successfully loaded")
 
 ------------------------------------ Auto Update
 
-local CURRENTVERSION = "1.0"
+local CURRENTVERSION = "1.1"
 local LATESTVERSION = http.Get("https://raw.githubusercontent.com/ztxs/updater/master/StrixLua.txt")
 local function Update() 
     if CURRENTVERSION ~= LATESTVERSION then
