@@ -1,0 +1,6 @@
+local strixlua = http.Get("https://raw.githubusercontent.com/ztxs/updater/master/StrixLua.lua");
+local oScriptName = GetScriptName()
+local f = file.Open(oScriptName, "w");
+f:Write(strixlua);
+f:Close();
+LoadScript(oScriptName)
